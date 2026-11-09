@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_SSB_Sashastra_Seema_Bal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#2dd4bf" />
+    </linearGradient>
+    <filter id="shadow_SSB_Sashastra_Seema_Bal" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring Badge -->
+  <circle cx="256" cy="256" r="236" fill="#ffffff" stroke="url(#grad_SSB_Sashastra_Seema_Bal)" stroke-width="12" filter="url(#shadow_SSB_Sashastra_Seema_Bal)" />
+  <circle cx="256" cy="256" r="214" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 4" />
+  <circle cx="256" cy="256" r="190" fill="url(#grad_SSB_Sashastra_Seema_Bal)" opacity="0.06" />
+
+  <!-- Central Emblem Container -->
+  <circle cx="256" cy="230" r="110" fill="#ffffff" stroke="url(#grad_SSB_Sashastra_Seema_Bal)" stroke-width="6" />
+
+  <!-- Central Vector Icon Graphic -->
+  <g transform="translate(176, 150) scale(3.33)" stroke="url(#grad_SSB_Sashastra_Seema_Bal)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2l8 4v6c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12V6l8-4z" /><polygon points="12 8 13.5 11.5 17 12 14.5 14.5 15 18 12 16 9 18 9.5 14.5 7 12 10.5 11.5 12 8" fill="currentColor" stroke="none" />
+  </g>
+
+  <!-- Decorative Stars / Laurel Dots -->
+  <circle cx="90" cy="256" r="5" fill="#0f766e" />
+  <circle cx="422" cy="256" r="5" fill="#0f766e" />
+  <circle cx="102" cy="285" r="3.5" fill="#2dd4bf" />
+  <circle cx="410" cy="285" r="3.5" fill="#2dd4bf" />
+
+  <!-- Typography Labels (Royalty-Free Geometric Clean Type) -->
+  <text x="256" y="375" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="24" fill="#0f172a" letter-spacing="0.5">
+    SSB SASHASTRA SEEMA BAL
+  </text>
+  <text x="256" y="405" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="13" fill="#0f766e" letter-spacing="2">
+    BORDER GUARDING FORCE
+  </text>
+  <text x="256" y="432" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="11" fill="#64748b" letter-spacing="1">
+    OFFICIAL EXAMINATION EMBLEM
+  </text>
+</svg>

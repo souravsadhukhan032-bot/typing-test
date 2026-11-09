@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_DRDO_Defence_Research" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#0d9488" />
+    </linearGradient>
+    <filter id="shadow_DRDO_Defence_Research" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring Badge -->
+  <circle cx="256" cy="256" r="236" fill="#ffffff" stroke="url(#grad_DRDO_Defence_Research)" stroke-width="12" filter="url(#shadow_DRDO_Defence_Research)" />
+  <circle cx="256" cy="256" r="214" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 4" />
+  <circle cx="256" cy="256" r="190" fill="url(#grad_DRDO_Defence_Research)" opacity="0.06" />
+
+  <!-- Central Emblem Container -->
+  <circle cx="256" cy="230" r="110" fill="#ffffff" stroke="url(#grad_DRDO_Defence_Research)" stroke-width="6" />
+
+  <!-- Central Vector Icon Graphic -->
+  <g transform="translate(176, 150) scale(3.33)" stroke="url(#grad_DRDO_Defence_Research)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9" /><path d="M12 3v18M3 12h18m-4.5-4.5l-9 9m0-9l9 9" />
+  </g>
+
+  <!-- Decorative Stars / Laurel Dots -->
+  <circle cx="90" cy="256" r="5" fill="#0f766e" />
+  <circle cx="422" cy="256" r="5" fill="#0f766e" />
+  <circle cx="102" cy="285" r="3.5" fill="#0d9488" />
+  <circle cx="410" cy="285" r="3.5" fill="#0d9488" />
+
+  <!-- Typography Labels (Royalty-Free Geometric Clean Type) -->
+  <text x="256" y="375" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="24" fill="#0f172a" letter-spacing="0.5">
+    DRDO DEFENCE RESEARCH
+  </text>
+  <text x="256" y="405" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="13" fill="#0f766e" letter-spacing="2">
+    MINISTRY OF DEFENCE
+  </text>
+  <text x="256" y="432" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="11" fill="#64748b" letter-spacing="1">
+    OFFICIAL EXAMINATION EMBLEM
+  </text>
+</svg>
