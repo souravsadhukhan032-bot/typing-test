@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#161617">
+  <title>Browse Exam Subcategories - TypingMockExam.com</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    :focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; }
+    summary::-webkit-details-marker { display: none; }
+    .directory-category-logo { display:grid; width:2.5rem; height:2.5rem; flex:0 0 2.5rem; place-items:center; overflow:hidden; border:1px solid #e2e8f0; border-radius:.8rem; background:#fff; padding:.25rem; }
+    .directory-category-logo img { width:100%; height:100%; object-fit:contain; }
+    .directory-exam-logo { display:grid; width:1.75rem; height:1.75rem; flex:0 0 1.75rem; place-items:center; overflow:hidden; border:1px solid #e2e8f0; border-radius:.55rem; background:#fff; padding:.18rem; }
+    .directory-exam-logo img { width:100%; height:100%; object-fit:contain; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; } }
+  </style>
+  <link rel="stylesheet" href="assets/css/site-interactions.css">
+</head>
+<body class="min-h-screen bg-[#f5f5f7] text-slate-900">
+  <header class="sticky top-0 z-30 border-b border-white/10 bg-[#161617]/80 text-white shadow-sm backdrop-blur-2xl">
+    <nav class="mx-auto flex h-12 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Main navigation">
+      <a href="index.html" class="flex items-center gap-2 font-bold tracking-tight" aria-label="TypingMockExam home">
+        <svg class="h-7 w-7 shrink-0" viewBox="0 0 40 40" role="img" aria-label="TypingMockExam logo">
+          <defs><linearGradient id="brand-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
+          <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#brand-gradient)"/><path d="M11 12h18v4H22v13h-4V16h-7z" fill="#fff"/><circle cx="29" cy="28" r="2" fill="#bae6fd"/>
+        </svg>
+        <span>TypingMockExam<span class="text-sky-400">.com</span></span>
+      </a>
+      <div class="hidden items-center gap-4 text-sm sm:flex">
+        <a href="pricing.html" class="text-white/75 transition hover:text-white">Plans</a>
+        <a href="account.html" class="text-white/75 transition hover:text-white">Account</a>
+        <a href="index.html" class="rounded-full bg-white/10 px-4 py-2 font-semibold transition hover:bg-white/20">Home</a>
+      </div>
+      <details class="relative sm:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20" aria-label="Open navigation menu">
+          <span class="flex flex-col gap-1" aria-hidden="true"><span class="h-0.5 w-4 rounded-full bg-white"></span><span class="h-0.5 w-4 rounded-full bg-white"></span><span class="h-0.5 w-4 rounded-full bg-white"></span></span>
+        </summary>
+        <div class="absolute right-0 top-full mt-2 grid min-w-48 gap-1 rounded-2xl border border-white/10 bg-[#161617] p-2 text-sm shadow-xl">
+          <a href="pricing.html" class="rounded-xl px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white">Plans</a>
+          <a href="account.html" class="rounded-xl px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white">Account</a>
+          <a href="index.html" class="rounded-xl px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white">Home</a>
+        </div>
+      </details>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+    <div class="max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-[.2em] text-blue-600">Practice library</p>
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Choose an exam.</h1>
+      <p class="mt-4 text-sm leading-6 text-slate-500">Open a category or go straight to an exam subcategory. Each link opens the matching lesson list, and you can share the filtered URL.</p>
+    </div>
+    <div id="subcategory-groups" class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+    <aside id="category-directory-ad-slot" class="site-ad-slot mt-8" aria-label="Advertisement" data-ad-format="responsive" data-ad-sizes="320x100,468x60,728x90">
+      <span class="site-ad-slot-label">Advertisement</span>
+      <div class="site-ad-slot-surface" aria-hidden="true">Responsive ad placement</div>
+    </aside>
+  </main>
+
+  <aside id="footer-ad-banner" class="mx-auto mb-7 w-full max-w-7xl px-4 sm:px-6" aria-label="Sponsored practice tools">
+    <div class="relative mx-auto flex min-h-24 max-w-[970px] flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 via-white to-sky-50 px-5 py-4 shadow-sm sm:flex-row sm:px-7">
+      <span class="absolute left-0 top-0 rounded-br-lg bg-slate-100 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-500">Sponsored</span>
+      <div class="pt-3 sm:pt-1"><p class="text-sm font-extrabold text-slate-900">Make every practice session count</p><p class="mt-1 text-xs text-slate-500">Explore typing tools selected for comfortable, focused preparation.</p></div>
+      <a href="index.html#section-gear" class="shrink-0 rounded-full bg-slate-900 px-4 py-2 text-xs font-bold text-white transition hover:bg-blue-700">Explore practice gear <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </aside>
+  <footer class="border-t border-slate-200 bg-white py-7 text-xs text-slate-500">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-6">
+      <p class="font-bold text-slate-900">TypingMockExam.com &bull; Exam typing practice</p>
+      <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2" aria-label="Footer navigation">
+        <a href="index.html" class="hover:text-blue-600">All Categories</a><a href="pricing.html" class="hover:text-blue-600">Plans</a><a href="account.html" class="hover:text-blue-600">Account</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    const groups = [
+      { title: 'SSC', abbr: 'SSC', logo: 'assets/logos/official/ssc.webp', page: 'ssc.html', allPage: 'index.html?category=ssc', practicePage: 'index.html', linkClass: 'bg-blue-50 text-blue-700 hover:bg-blue-100', items: [['SSC CGL DEST', 'ssc-cgl-dest'], ['SSC CHSL LDC / JSA', 'ssc-chsl-ldc'], ['SSC CHSL DEO DEST', 'ssc-chsl-deo'], ['SSC Stenographer Grade C', 'ssc-steno-c'], ['SSC Stenographer Grade D', 'ssc-steno-d'], ['SSC Selection Post — Typing Posts', 'ssc-selection-post'], ['Delhi Police HCM (SSC recruitment)', 'delhi-police-hcm'], ['Delhi Police ASI Stenographer', 'delhi-police-asi-steno']] },
+      { title: 'High Courts', abbr: 'HC', logo: 'assets/logos/official/delhi-high-court.png', page: 'high-court.html', allPage: 'index.html?category=high_court', practicePage: 'index.html', linkClass: 'bg-violet-50 text-violet-700 hover:bg-violet-100', items: [['Delhi High Court JJA / SPA / PA', 'dhc-spa-ja'], ['Allahabad High Court', 'allahabad-hc'], ['Himachal Pradesh High Court', 'hp-hc', false], ['Bombay High Court', 'bombay-hc', false]] },
+      { title: 'District Courts', abbr: 'DC', logo: '', page: 'district-court.html', allPage: 'index.html?category=district_court', practicePage: 'index.html', linkClass: 'bg-amber-50 text-amber-800 hover:bg-amber-100', items: [['Delhi District Courts', 'delhi-dc', false], ['Himachal Pradesh District Courts', 'hp-dc', false], ['Uttar Pradesh Civil Courts', 'up-dc', false]] },
+      { title: 'Supreme Court', abbr: 'SC', logo: 'assets/logos/official/supreme-court.png', page: 'supreme-court.html', allPage: 'index.html?category=supreme_court', practicePage: 'index.html', linkClass: 'bg-slate-100 text-slate-700 hover:bg-slate-200', items: [['Supreme Court Junior Court Assistant', 'sc-jca', false]] },
+      { title: 'Police & Paramilitary', abbr: 'CAPF', logo: 'assets/logos/official/bsf.png', page: 'police.html', allPage: 'index.html?category=police', linkClass: 'bg-teal-50 text-teal-700 hover:bg-teal-100', items: [['BSF Head Constable Ministerial', 'bsf-hcm'], ['RPF Constable Typist', 'rpf-constable-typist']] },
+      { title: 'DSSSB', abbr: 'DSSSB', logo: 'assets/logos/official/dsssb.png', page: 'dsssb.html', allPage: 'index.html?category=dsssb', practicePage: 'index.html', linkClass: 'bg-rose-50 text-rose-700 hover:bg-rose-100', items: [['DSSSB Junior Assistant / LDC English', 'dsssb-ldc-eng'], ['DSSSB Junior Assistant / LDC Hindi', 'dsssb-ldc-hin']] },
+      { title: 'State PSC', abbr: 'PSC', logo: '', page: 'state-psc.html', allPage: 'index.html?category=state_psc', linkClass: 'bg-orange-50 text-orange-700 hover:bg-orange-100', items: [['HPPSC Steno-Typist', 'hppsc-steno'], ['Rajasthan LDC', 'rssb-rajasthan-ldc'], ['UPSSSC Junior Assistant', 'upsssc-ja-2026'], ['MP CPCT', 'mp-cpct-2026'], ['Bihar DEO', 'beltron-bihar-deo'], ['RSSB Informatics Assistant', 'rssb-ia-2024'], ['MPSC Clerk-Typist', 'mpsc-clerk-typist']] },
+      { title: 'Banking', abbr: 'IBPS', logo: 'assets/logos/official/ibps.jpg', page: 'banking.html', allPage: 'index.html?category=banking', practicePage: 'index.html', linkClass: 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100', items: [['IBPS Stenographer / Secretarial (when notified)', 'ibps-steno'], ['SBI Stenographer / PA (when notified)', 'sbi-steno'], ['Bank of Baroda PA / Steno (when notified)', 'bob-pa-steno'], ['Other PSB Typist / Steno posts (when notified)', 'psb-clerk-typist']] },
+      { title: 'UPSC', abbr: 'UPSC', logo: '', page: 'upsc.html', allPage: 'index.html?category=upsc', practicePage: 'index.html', linkClass: 'bg-blue-50 text-blue-700 hover:bg-blue-100', items: [['UPSC Combined Stenographers LDCE', 'upsc-ldce-steno'], ['UPSC Direct Stenographer', 'upsc-dr-steno'], ['UPSC Personal Assistant', 'upsc-dr-pa'], ['UPSC Private Secretary', 'upsc-dr-ps']] },
+      { title: 'Central Departments', abbr: 'GOI', logo: 'assets/logos/official/epfo.svg', page: 'central-departments.html', allPage: 'index.html?category=central_dept', practicePage: 'index.html', linkClass: 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100', items: [['EPFO SSA', 'epfo-ssa'], ['AIIMS CRE Typist', 'aiims-cre-typist', false], ['KVS / NVS JSA', 'kvs-nvs-jsa'], ['RRB NTPC Typing Test', 'rrb-ntpc-tst']] }
+    ];
+    const container = document.getElementById('subcategory-groups');
+    container.innerHTML = groups.map(group => `
+      <section class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="directory-category-logo">${group.logo ? `<img src="${group.logo}" alt="">` : `<span class="text-[10px] font-black text-blue-700">${group.abbr}</span>`}</span>
+              <h2 class="text-lg font-bold">${group.title}</h2>
+            </div>
+            <p class="mt-1 text-xs text-slate-500">Choose a subcategory to see its lessons.</p>
+          </div>
+          <a href="${group.allPage || group.page}" class="shrink-0 rounded-full px-3 py-1.5 text-xs font-bold transition ${group.linkClass}">All exams →</a>
+        </div>
+        <ul class="mt-4 divide-y divide-slate-100">
+          ${group.items.map(([label, slug, available = true]) => available
+            ? `<li><a class="flex items-center justify-between gap-3 py-3 text-sm font-medium text-slate-700 transition hover:text-blue-700" href="${group.practicePage || group.page}?subcategory=${encodeURIComponent(slug)}"><span class="flex min-w-0 items-center gap-2.5"><span class="directory-exam-logo">${group.logo ? `<img src="${group.logo}" alt="">` : `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-4 w-4 text-slate-500"><path d="M5 4.5h14v15H5zM8 8h8M8 11.5h8M8 15h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`}</span><span>${label}</span></span><span aria-hidden="true" class="shrink-0 text-lg">→</span></a></li>`
+            : `<li><span class="flex items-center justify-between gap-3 py-3 text-sm text-slate-400"><span class="flex min-w-0 items-center gap-2.5"><span class="directory-exam-logo">${group.logo ? `<img src="${group.logo}" alt="">` : `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-4 w-4 text-slate-400"><path d="M5 4.5h14v15H5zM8 8h8M8 11.5h8M8 15h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`}</span><span>${label}</span></span><span class="shrink-0 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-slate-500">Coming soon</span></span></li>`
+          ).join('')}
+        </ul>
+      </section>
+    `).join('');
+  </script>
+  <script>
+    try {
+      const savedAuthState = JSON.parse(localStorage.getItem('ett_auth_state_v2') || 'null');
+      if (savedAuthState && savedAuthState.isPaid === true) {
+        document.getElementById('footer-ad-banner').classList.add('hidden');
+        document.getElementById('category-directory-ad-slot').classList.add('hidden');
+      }
+    } catch (error) {
+      console.error('Could not read the saved account plan for sponsored placement visibility.', error);
+    }
+  </script>
+</body>
+</html>

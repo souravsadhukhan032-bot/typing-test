@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#161617">
+  <title>Your Account - TypingMockExam.com</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    :focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; }
+    summary::-webkit-details-marker { display: none; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+  <link rel="stylesheet" href="assets/css/site-interactions.css">
+</head>
+<body class="min-h-screen bg-[#f5f5f7] text-slate-900">
+  <header class="sticky top-0 z-30 border-b border-white/10 bg-[#161617]/80 text-white shadow-sm backdrop-blur-2xl">
+    <nav class="mx-auto flex h-12 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Main navigation">
+      <a href="index.html" class="flex items-center gap-2 font-bold tracking-tight" aria-label="TypingMockExam home">
+        <svg class="h-7 w-7 shrink-0" viewBox="0 0 40 40" role="img" aria-label="TypingMockExam logo">
+          <defs><linearGradient id="brand-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
+          <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#brand-gradient)"/><path d="M11 12h18v4H22v13h-4V16h-7z" fill="#fff"/><circle cx="29" cy="28" r="2" fill="#bae6fd"/>
+        </svg>
+        <span>TypingMockExam<span class="text-sky-400">.com</span></span>
+      </a>
+      <div class="hidden items-center gap-4 text-sm sm:flex">
+        <a href="subcategories.html" class="text-white/75 transition hover:text-white">Exams</a>
+        <a href="pricing.html" class="text-white/75 transition hover:text-white">Plans</a>
+        <a href="index.html" class="rounded-full bg-white/10 px-4 py-2 font-semibold transition hover:bg-white/20">Back to practice</a>
+      </div>
+      <details class="relative sm:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20" aria-label="Open navigation menu">
+          <span class="flex flex-col gap-1" aria-hidden="true"><span class="h-0.5 w-4 rounded-full bg-white"></span><span class="h-0.5 w-4 rounded-full bg-white"></span><span class="h-0.5 w-4 rounded-full bg-white"></span></span>
+        </summary>
+        <div class="absolute right-0 top-full mt-2 grid min-w-48 gap-1 rounded-2xl border border-white/10 bg-[#161617] p-2 text-sm shadow-xl">
+          <a href="subcategories.html" class="rounded-xl px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white">Exams</a>
+          <a href="pricing.html" class="rounded-xl px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white">Plans</a>
+          <a href="index.html" class="rounded-xl px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white">Back to practice</a>
+        </div>
+      </details>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
+    <div class="mb-8">
+      <p class="text-xs font-bold uppercase tracking-[.18em] text-blue-600">Account</p>
+      <h1 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Your profile</h1>
+      <p class="mt-2 text-sm text-slate-500">Manage your account, membership, and recent practice scores.</p>
+    </div>
+
+    <section class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+      <div class="flex flex-col gap-5 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 p-6 text-white sm:flex-row sm:items-center sm:p-8">
+        <div id="account-avatar" class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-sky-500 text-2xl font-extrabold shadow-lg shadow-sky-950/30" aria-hidden="true">G</div>
+        <div class="min-w-0 flex-1">
+          <p id="account-status-label" class="text-xs font-semibold uppercase tracking-wider text-sky-200">Free account</p>
+          <h2 id="account-name" class="mt-1 break-words text-2xl font-bold">Guest</h2>
+          <p id="account-email" class="mt-1 break-all text-sm text-white/65">Not signed in</p>
+        </div>
+        <a id="account-signin" href="index.html?signin=1" class="hidden rounded-full bg-white px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-sky-100">Sign in</a>
+      </div>
+
+      <div class="grid gap-4 p-5 sm:grid-cols-2 sm:p-8">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Membership</p>
+          <p id="account-plan" class="mt-2 text-lg font-bold">Free Practice</p>
+          <p id="account-validity" class="mt-1 text-sm text-slate-500">Practice access is ready.</p>
+          <a id="account-upgrade" href="pricing.html" class="mt-4 inline-flex rounded-full bg-blue-600 px-4 py-2 text-xs font-bold text-white transition hover:bg-blue-700">Compare plans</a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Practice history</p>
+          <p id="account-attempt-count" class="mt-2 text-lg font-bold">0 attempts</p>
+          <p class="mt-1 text-sm text-slate-500">Your latest results are saved on this device.</p>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-100 px-5 py-5 sm:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 class="font-bold">Recent tests</h2>
+            <p class="mt-1 text-xs text-slate-500">Your most recent typing practice results.</p>
+          </div>
+          <button id="account-logout" type="button" class="hidden rounded-full border border-rose-200 px-4 py-2 text-xs font-bold text-rose-700 transition hover:bg-rose-50">Sign out</button>
+        </div>
+        <p id="account-message" class="mt-4 hidden rounded-xl bg-emerald-50 p-3 text-sm text-emerald-800" role="status"></p>
+        <div id="account-history" class="mt-4 space-y-2"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const AUTH_KEY = 'ett_auth_state_v2';
+    const HISTORY_KEY = 'ett_history_v2';
+    const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[char]);
+
+    let storageWarning = '';
+    function readLocalJson(key, fallback) {
+      try {
+        const value = localStorage.getItem(key);
+        return value ? JSON.parse(value) : fallback;
+      } catch (error) {
+        console.error(`Unable to read ${key} from browser storage.`, error);
+        storageWarning = 'Some saved account data could not be read. Check browser storage permissions and refresh this page.';
+        return fallback;
+      }
+    }
+
+    const defaultAccount = {
+      isLoggedIn: true,
+      name: 'Sourav',
+      email: 'sourav.aspirant@example.com',
+      isPaid: true,
+      validity: '06 Nov 2027'
+    };
+    const savedAccount = readLocalJson(AUTH_KEY, defaultAccount);
+    const isSavedAccountValid = savedAccount && typeof savedAccount === 'object' && !Array.isArray(savedAccount);
+    const account = isSavedAccountValid
+      ? { ...defaultAccount, ...savedAccount }
+      : defaultAccount;
+    if (!isSavedAccountValid && savedAccount !== defaultAccount) {
+      storageWarning = 'Saved account data has an invalid format. Update it from the practice page and try again.';
+    }
+    const savedHistory = readLocalJson(HISTORY_KEY, []);
+    const history = Array.isArray(savedHistory) ? savedHistory : [];
+    if (!Array.isArray(savedHistory)) {
+      storageWarning = 'Saved practice history has an invalid format and could not be displayed.';
+    }
+    const displayName = account.isLoggedIn ? (account.name || 'Candidate') : 'Guest';
+
+    document.getElementById('account-avatar').textContent = displayName.trim().charAt(0).toUpperCase() || 'G';
+    document.getElementById('account-name').textContent = displayName;
+    document.getElementById('account-email').textContent = account.isLoggedIn ? (account.email || 'Email not provided') : 'Not signed in';
+    document.getElementById('account-status-label').textContent = account.isLoggedIn ? 'Your account' : 'Guest session';
+    document.getElementById('account-plan').textContent = account.isPaid ? 'Premium · Ad-free' : 'Free Practice';
+    document.getElementById('account-validity').textContent = account.isPaid
+      ? `Membership valid through ${account.validity || 'your current billing period'}.`
+      : 'Practice access is ready whenever you are.';
+    document.getElementById('account-attempt-count').textContent = `${history.length} ${history.length === 1 ? 'attempt' : 'attempts'}`;
+
+    if (account.isLoggedIn) {
+      document.getElementById('account-logout').classList.remove('hidden');
+    } else {
+      document.getElementById('account-signin').classList.remove('hidden');
+    }
+    if (account.isPaid) document.getElementById('account-upgrade').textContent = 'View membership plans';
+    if (storageWarning) {
+      const message = document.getElementById('account-message');
+      message.textContent = storageWarning;
+      message.className = 'mt-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800';
+    }
+
+    const historyContainer = document.getElementById('account-history');
+    if (!Array.isArray(history) || history.length === 0) {
+      historyContainer.innerHTML = '<p class="rounded-xl bg-slate-50 p-4 text-sm text-slate-500">No tests recorded yet. Start a practice test to see your results here.</p>';
+    } else {
+      historyContainer.innerHTML = history.slice(0, 10).map(item => `
+        <article class="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-100 p-4">
+          <div class="min-w-0">
+            <h3 class="truncate text-sm font-bold">${escapeHtml(item.testTitle || 'Typing practice')}</h3>
+            <p class="mt-1 text-xs text-slate-500">${escapeHtml(item.date || '')}</p>
+          </div>
+          <div class="flex items-center gap-3 text-xs">
+            <span class="font-bold text-slate-800">${escapeHtml(item.netWpm ?? 0)} WPM</span>
+            <span class="text-slate-500">${escapeHtml(item.accuracy ?? 0)}% accuracy</span>
+            <span class="rounded-full px-2.5 py-1 font-bold ${item.passed ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700'}">${item.passed ? 'Qualified' : 'Keep practicing'}</span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    document.getElementById('account-logout').addEventListener('click', () => {
+      try {
+        const saved = readLocalJson(AUTH_KEY, account);
+        saved.isLoggedIn = false;
+        saved.name = 'Guest';
+        localStorage.setItem(AUTH_KEY, JSON.stringify(saved));
+        window.location.href = 'index.html';
+      } catch {
+        const message = document.getElementById('account-message');
+        message.textContent = 'Unable to save the sign-out state in this browser. Check storage permissions and try again.';
+        message.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
